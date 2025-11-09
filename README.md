@@ -5,20 +5,18 @@
 ### **🙏 Original Project:**
 This project is an **enhanced version** of the excellent [ByteBot](https://github.com/bytebot-ai/bytebot) created by the [ByteBot AI team](https://github.com/bytebot-ai).
 
-**Original ByteBot**: https://github.com/bytebot-ai/bytebot
-**Original Creators**: ByteBot AI Team
-**License**: [View Original License](https://github.com/bytebot-ai/bytebot/blob/main/LICENSE)
+- **Original ByteBot**: https://github.com/bytebot-ai/bytebot
+- **Original Creators**: ByteBot AI Team  
+- **License**: [View Original License](https://github.com/bytebot-ai/bytebot/blob/main/LICENSE)
 
-**Enhanced Version**: https://github.com/fxinfo24/ByteBot-Pro
-**ByteBot-Pro Creator**: fxinfo24
-**Enhancement Focus**: 100% operational AI automation with production optimizations
+### **🔥 Enhanced Version - "ByteBot-Pro":**
+- **Enhanced Version**: https://github.com/fxinfo24/ByteBot-Pro
+- **ByteBot-Pro Creator**: fxinfo24
+- **Enhancement Focus**: 100% operational AI automation with production optimizations
 
-### **🔥 Our Enhancements - "ByteBot-Pro":**
 We've built upon the solid foundation of ByteBot to create **ByteBot-Pro** - a **100% operational, production-ready** AI automation platform with significant improvements and optimizations.
 
 ---
-
-# 🤖 ByteBot-Pro - AI Agent Platform
 
 **The complete AI automation platform with desktop computer use, multi-LLM support, and Atlassian integration.**
 
@@ -287,4 +285,3 @@ MIT License - see [LICENSE](LICENSE) for details.
 ---
 
 **🎉 Ready to automate? Run `./scripts/bytebot.sh start` and visit http://localhost:9992!** 🚀
-# ByteBot-Pro
