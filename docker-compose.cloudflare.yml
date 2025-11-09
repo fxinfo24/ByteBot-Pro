@@ -1,0 +1,32 @@
+# ByteBot-Pro with Cloudflare Tunnel Integration
+# Extends the main docker-compose.yml with Cloudflare Tunnel service
+
+version: '3.8'
+
+services:
+  # Cloudflare Tunnel Service
+  cloudflare-tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: bytebot-cloudflare-tunnel
+    restart: unless-stopped
+    command: tunnel run bytebot-pro
+    volumes:
+      - ~/.cloudflared:/etc/cloudflared
+      - ./cloudflare-tunnel.yml:/etc/cloudflared/config.yml:ro
+    networks:
+      - bytebot-network
+    depends_on:
+      - bytebot-ui
+      - bytebot-agent
+      - bytebot-desktop
+    environment:
+      - TUNNEL_METRICS=0.0.0.0:8080
+    ports:
+      - "8080:8080"  # Tunnel metrics (optional)
+    labels:
+      - "com.bytebot.service=cloudflare-tunnel"
+      - "com.bytebot.description=Cloudflare Tunnel for secure external access"
+
+networks:
+  bytebot-network:
+    external: true

@@ -138,6 +138,37 @@ update_bytebot() {
     print_success "Bytebot updated and restarted!"
 }
 
+# Start with Cloudflare Tunnel
+start_tunnel() {
+    print_status "Starting Bytebot with Cloudflare Tunnel..."
+    
+    if ! check_env; then
+        print_error "Please configure .env file first!"
+        exit 1
+    fi
+    
+    # Check if cloudflare tunnel config exists
+    if [ ! -f cloudflare-tunnel.yml ]; then
+        print_warning "cloudflare-tunnel.yml not found. Creating from template..."
+        cp cloudflare-tunnel.example.yml cloudflare-tunnel.yml
+        print_warning "Please edit cloudflare-tunnel.yml with your tunnel details!"
+        print_status "Run: ./scripts/setup-cloudflare-tunnel.sh for automated setup"
+        exit 1
+    fi
+    
+    docker compose -f docker-compose.yml -f docker-compose.cloudflare.yml up -d
+    
+    print_success "Bytebot with Cloudflare Tunnel is starting up!"
+    print_status "Your ByteBot-Pro will be accessible via:"
+    echo "  🌐 Web UI:      https://bytebot.yourdomain.com"
+    echo "  🤖 API:        https://api.bytebot.yourdomain.com"
+    echo "  🖥️  Desktop:    https://desktop.bytebot.yourdomain.com"
+    echo "  🧠 LLM Proxy:  https://llm.bytebot.yourdomain.com"
+    echo ""
+    print_status "📋 Make sure your DNS records are configured in Cloudflare!"
+    print_status "📖 See docs/CLOUDFLARE_TUNNEL.md for detailed setup guide"
+}
+
 # Main script logic
 case "${1:-start}" in
     start)
@@ -158,8 +189,11 @@ case "${1:-start}" in
     update)
         update_bytebot
         ;;
+    tunnel)
+        start_tunnel
+        ;;
     *)
-        echo "Usage: $0 {start|stop|restart|logs|status|update}"
+        echo "Usage: $0 {start|stop|restart|logs|status|update|tunnel}"
         echo ""
         echo "Commands:"
         echo "  start    - Start Bytebot (default)"
@@ -168,6 +202,7 @@ case "${1:-start}" in
         echo "  logs     - Show logs (optionally specify service name)"
         echo "  status   - Show service status and health"
         echo "  update   - Update and rebuild Bytebot"
+        echo "  tunnel   - Start with Cloudflare Tunnel (global access)"
         echo ""
         echo "Examples:"
         echo "  $0 start"

@@ -28,6 +28,7 @@ We've built upon the solid foundation of ByteBot to create **ByteBot-Pro** - a *
 - **🖥️ Desktop Automation**: Complete computer use capabilities with VNC viewer
 - **🔗 Atlassian Integration**: Native Jira and Confluence automation
 - **🌙 Modern UI**: Web interface with dark mode toggle
+- **🌐 Global Access**: Optional Cloudflare Tunnel integration for secure worldwide access
 - **📊 Task Management**: Visual workflow management and real-time monitoring
 - **🔄 Multi-Provider**: Cost-effective routing via OpenRouter + direct providers
 
@@ -52,6 +53,7 @@ cd ByteBot-Pro
 ./scripts/bytebot.sh status   # Check health & show all URLs
 ./scripts/bytebot.sh logs     # View all service logs
 ./scripts/bytebot.sh update   # Pull latest changes & rebuild
+./scripts/bytebot.sh tunnel   # Start with Cloudflare Tunnel (global access)
 ```
 
 ### 📊 What You Get
@@ -248,6 +250,7 @@ cd .. && ./bytebot.sh start
 
 - **[Quick Start Guide](docs/QUICK_START.md)** - 5-minute deployment with 12 AI models (3 FREE)
 - **[Deployment Guide](docs/DEPLOYMENT.md)** - Advanced deployment options
+- **[Cloudflare Tunnel](docs/CLOUDFLARE_TUNNEL.md)** - Secure global access setup
 - **[Atlassian Integration](docs/ATLASSIAN_INTEGRATION.md)** - Jira & Confluence setup
 - **[Documentation Index](docs/DOCUMENTATION_INDEX.md)** - Complete guide navigation
 - **[Project Attribution](docs/PROJECT_ATTRIBUTION.md)** - Credits to original ByteBot team & our enhancements

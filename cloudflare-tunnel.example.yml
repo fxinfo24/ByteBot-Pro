@@ -1,0 +1,42 @@
+# Cloudflare Tunnel Configuration for ByteBot-Pro
+# Copy this file to cloudflare-tunnel.yml and update with your details
+
+tunnel: YOUR_TUNNEL_ID_HERE
+credentials-file: /etc/cloudflared/YOUR_TUNNEL_ID_HERE.json
+
+# Ingress rules - customize domains to match your setup
+ingress:
+  # ByteBot Web UI (Main Interface) - Primary access point
+  - hostname: bytebot.yourdomain.com
+    service: http://bytebot-ui:3000
+    originRequest:
+      httpHostHeader: localhost:9992
+      noTLSVerify: true
+      
+  # ByteBot API - For external integrations  
+  - hostname: api.bytebot.yourdomain.com
+    service: http://bytebot-agent:3000
+    originRequest:
+      httpHostHeader: localhost:9991
+      noTLSVerify: true
+      
+  # ByteBot Desktop (VNC) - Remote desktop access
+  - hostname: desktop.bytebot.yourdomain.com
+    service: http://bytebot-desktop:6080
+    originRequest:
+      httpHostHeader: localhost:6080
+      noTLSVerify: true
+      
+  # LiteLLM Proxy (Optional) - Direct AI model access
+  - hostname: llm.bytebot.yourdomain.com
+    service: http://bytebot-llm-proxy:4000
+    originRequest:
+      httpHostHeader: localhost:4000
+      noTLSVerify: true
+      
+  # Catch-all rule (required by Cloudflare)
+  - service: http_status:404
+
+# Optional: Tunnel metrics and monitoring
+warp-routing:
+  enabled: false
