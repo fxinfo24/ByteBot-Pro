@@ -12,6 +12,7 @@
 
 ### **For Advanced Users:**
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** - Advanced deployment and troubleshooting
+- **[CLOUDFLARE_TUNNEL.md](CLOUDFLARE_TUNNEL.md)** - Secure global access via Cloudflare Tunnel
 - **[ATLASSIAN_INTEGRATION.md](ATLASSIAN_INTEGRATION.md)** - Enterprise Jira/Confluence integration
 
 ## 🎯 Core Features
@@ -24,6 +25,9 @@
 
 ### **🔗 Enterprise Integration:**
 - **[ATLASSIAN_INTEGRATION.md](ATLASSIAN_INTEGRATION.md)** - Jira & Confluence automation setup
+
+### **🌐 Global Access:**
+- **[CLOUDFLARE_TUNNEL.md](CLOUDFLARE_TUNNEL.md)** - Secure worldwide access via Cloudflare Tunnel
 
 ### **⚙️ Technical Reference:**
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** - Advanced deployment options
@@ -41,6 +45,7 @@
 │
 ├── 🔧 **Setup & Configuration**
 │   ├── DEPLOYMENT.md          ← Advanced deployment & troubleshooting
+│   ├── CLOUDFLARE_TUNNEL.md   ← Secure global access setup
 │   └── ATLASSIAN_INTEGRATION.md ← Enterprise Jira/Confluence integration
 ```
 
@@ -50,8 +55,9 @@
 
 ### **I want to...**
 - **Deploy quickly**: [QUICK_START.md](QUICK_START.md) - 5-minute setup
-- **Understand all features**: [README.md](README.md) - Complete overview
+- **Understand all features**: [README.md](../README.md) - Complete overview
 - **Configure 12 models**: OpenRouter (7 premium + 3 FREE) + Gemini integration in [QUICK_START.md](QUICK_START.md)
+- **Enable global access**: [CLOUDFLARE_TUNNEL.md](CLOUDFLARE_TUNNEL.md) - Secure worldwide access
 - **Set up Atlassian**: [ATLASSIAN_INTEGRATION.md](ATLASSIAN_INTEGRATION.md) - Jira/Confluence
 - **Advanced deployment**: [DEPLOYMENT.md](DEPLOYMENT.md) - Production setup
 

@@ -166,10 +166,31 @@ curl http://localhost:9992          # Test direct access
 
 ---
 
+## 🌐 **Optional: Enable Global Access**
+
+Want to access your ByteBot-Pro from anywhere in the world securely?
+
+```bash
+# Setup Cloudflare Tunnel for global access (one-time setup)
+./scripts/setup-cloudflare-tunnel.sh
+
+# Start with global access
+./scripts/bytebot.sh tunnel
+```
+
+**Benefits:**
+- 🔒 **Secure HTTPS** access from anywhere
+- 🌍 **No firewall configuration** needed
+- ⚡ **Global CDN** performance
+- 🛡️ **DDoS protection** included
+
+See **[Cloudflare Tunnel Guide](CLOUDFLARE_TUNNEL.md)** for detailed setup instructions.
+
 ## 📚 Next Steps
 
+- **[Cloudflare Tunnel](CLOUDFLARE_TUNNEL.md)** - Setup secure global access
 - **[Atlassian Integration](ATLASSIAN_INTEGRATION.md)** - Connect Jira & Confluence
 - **[Deployment Guide](DEPLOYMENT.md)** - Advanced deployment options
 - **[Documentation Index](DOCUMENTATION_INDEX.md)** - Complete guide navigation
 
-**🎊 Congratulations! You now have a 100% OPERATIONAL professional AI automation platform with 12 models (including 3 FREE models) via OpenRouter, complete task execution, modern UI, and enterprise integration capabilities! Ready for production AI automation!**
+**🎊 Congratulations! You now have a 100% OPERATIONAL professional AI automation platform with 12 models (including 3 FREE models) via OpenRouter, complete task execution, modern UI, and enterprise integration capabilities! Ready for production AI automation with optional global access!**
