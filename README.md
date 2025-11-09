@@ -6,7 +6,7 @@
 This project is an **enhanced version** of the excellent [ByteBot](https://github.com/bytebot-ai/bytebot) created by the [ByteBot AI team](https://github.com/bytebot-ai).
 
 - **Original ByteBot**: https://github.com/bytebot-ai/bytebot
-- **Original Creators**: ByteBot AI Team  
+- **Original Creators**: ByteBot AI Team
 - **License**: [View Original License](https://github.com/bytebot-ai/bytebot/blob/main/LICENSE)
 
 ### **🔥 Enhanced Version - "ByteBot-Pro":**
@@ -17,6 +17,8 @@ This project is an **enhanced version** of the excellent [ByteBot](https://githu
 We've built upon the solid foundation of ByteBot to create **ByteBot-Pro** - a **100% operational, production-ready** AI automation platform with significant improvements and optimizations.
 
 ---
+
+# 🤖 ByteBot-Pro - AI Agent Platform
 
 **The complete AI automation platform with desktop computer use, multi-LLM support, and Atlassian integration.**
 
