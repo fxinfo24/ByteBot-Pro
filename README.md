@@ -24,7 +24,7 @@ We've built upon the solid foundation of ByteBot to create **ByteBot-Pro** - a *
 
 ## ✨ Features
 
-- **🤖 9 AI Models**: OpenRouter integration with Claude, GPT-4, Gemini (Claude 3.5 Sonnet default)
+- **🤖 12 AI Models**: OpenRouter integration with Claude, GPT-4, 3 FREE models, + Gemini (Claude 3.5 Sonnet default)
 - **🖥️ Desktop Automation**: Complete computer use capabilities with VNC viewer
 - **🔗 Atlassian Integration**: Native Jira and Confluence automation
 - **🌙 Modern UI**: Web interface with dark mode toggle
@@ -119,10 +119,10 @@ cp .env.example .env
 
 ### **🔑 API Configuration**
 
-For **9 AI models via OpenRouter + Gemini**, set these in your `.env` file:
+For **12 AI models via OpenRouter (7 premium + 3 FREE) + Gemini**, set these in your `.env` file:
 
 ```bash
-# OpenRouter API Key (7 models: Claude, GPT-4 family)
+# OpenRouter API Key (10 models: 7 premium + 3 FREE)
 OPENROUTER_API_KEY=sk-or-v1-your-openrouter-key-here
 
 # Google Gemini API Key (2 models: Gemini Pro, Gemini Flash)  
@@ -134,9 +134,17 @@ ATLASSIAN_EMAIL=your@email.com
 ATLASSIAN_API_TOKEN=your-atlassian-token-here
 ```
 
-### 🤖 Available Models (7 Total via OpenRouter + Gemini)
+### 🤖 Available Models (12 Total: 7 Premium + 3 FREE + 2 Gemini)
 
-#### **via OpenRouter** (7 models - unified billing):
+### 🆓 **NEW: 3 Completely FREE Models Available!**
+**Start using AI automation at ZERO cost:**
+- **z-ai/glm-4.5-air:free** 🆓 - Advanced text generation (131k context)
+- **deepseek/deepseek-chat-v3.1:free** 🆓 - Conversational AI (163k context) 
+- **qwen/qwen3-coder:free** 🆓 - Code generation specialist (262k context)
+
+*Perfect for testing, learning, and cost-effective AI automation!*
+
+#### **via OpenRouter Premium** (7 models - unified billing):
 1. **claude-3-opus** - Anthropic's most powerful model (200k context)
 2. **claude-3.5-sonnet** - Anthropic's fast, intelligent model ⭐ **DEFAULT**
 3. **claude-3-haiku** - Anthropic's fastest model
@@ -145,9 +153,16 @@ ATLASSIAN_API_TOKEN=your-atlassian-token-here
 6. **gpt-4** - OpenAI's standard model
 7. **gpt-3.5-turbo** - OpenAI's fast and cost-effective model
 
+#### **via OpenRouter FREE** (3 models - completely free):
+8. **z-ai/glm-4.5-air:free** - 🆓 GLM-4.5-Air FREE (131k context)
+9. **deepseek/deepseek-chat-v3.1:free** - 🆓 DeepSeek Chat v3.1 FREE (163k context)
+10. **qwen/qwen3-coder:free** - 🆓 Qwen 3 Coder FREE (262k context)
+
 #### **via Google Direct** (2 models - separate billing):
-8. **gemini-2.5-pro** - Google's flagship model
-9. **gemini-2.5-flash** - Google's fast model
+11. **gemini-2.5-pro** - Google's flagship model
+12. **gemini-2.5-flash** - Google's fast model
+
+> **💡 Pro Tip**: Start with the **FREE models** for testing and development, then upgrade to premium models for production workloads!
 
 ## 🎯 Usage Examples
 
@@ -214,7 +229,7 @@ cd .. && ./bytebot.sh start
 | Feature | Bytebot | n8n | Others |
 |---------|---------|-----|--------|
 | **Deployment** | `./bytebot.sh start` | `docker compose up -d` | Complex |
-| **AI Models** | 9 models (OpenRouter) | None | Limited |
+| **AI Models** | 12 models (7 premium + 3 FREE via OpenRouter) | None | Limited |
 | **Desktop Use** | ✅ Full computer control | ❌ | ❌ |
 | **Atlassian** | ✅ Native integration | 🔧 Manual setup | ❌ |
 | **Dark Mode** | ✅ Built-in toggle | ❌ | Varies |
@@ -231,7 +246,7 @@ cd .. && ./bytebot.sh start
 
 ## 📚 Documentation
 
-- **[Quick Start Guide](QUICK_START.md)** - 5-minute deployment with 9 AI models
+- **[Quick Start Guide](QUICK_START.md)** - 5-minute deployment with 12 AI models (3 FREE)
 - **[Deployment Guide](DEPLOYMENT.md)** - Advanced deployment options
 - **[Atlassian Integration](ATLASSIAN_INTEGRATION.md)** - Jira & Confluence setup
 - **[Documentation Index](DOCUMENTATION_INDEX.md)** - Complete guide navigation

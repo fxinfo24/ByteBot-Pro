@@ -7,6 +7,8 @@ import { MessagesModule } from './messages/messages.module';
 import { AnthropicModule } from './anthropic/anthropic.module';
 import { OpenAIModule } from './openai/openai.module';
 import { GoogleModule } from './google/google.module';
+import { OpenRouterModule } from './openrouter/openrouter.module';
+import { AtlassianModule } from './atlassian/atlassian.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
@@ -28,6 +30,8 @@ import { ProxyModule } from './proxy/proxy.module';
     AnthropicModule,
     OpenAIModule,
     GoogleModule,
+    OpenRouterModule,
+    AtlassianModule,
     ProxyModule,
     PrismaModule,
   ],

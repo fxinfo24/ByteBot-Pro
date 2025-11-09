@@ -27,6 +27,7 @@ import { InputCaptureService } from './input-capture.service';
 import { OnEvent } from '@nestjs/event-emitter';
 import { OpenAIService } from '../openai/openai.service';
 import { GoogleService } from '../google/google.service';
+import { OpenRouterService } from '../openrouter/openrouter.service';
 import {
   BytebotAgentModel,
   BytebotAgentService,
@@ -55,6 +56,7 @@ export class AgentProcessor {
     private readonly anthropicService: AnthropicService,
     private readonly openaiService: OpenAIService,
     private readonly googleService: GoogleService,
+    private readonly openrouterService: OpenRouterService,
     private readonly proxyService: ProxyService,
     private readonly inputCaptureService: InputCaptureService,
   ) {
@@ -62,6 +64,7 @@ export class AgentProcessor {
       anthropic: this.anthropicService,
       openai: this.openaiService,
       google: this.googleService,
+      openrouter: this.openrouterService,
       proxy: this.proxyService,
     };
     this.logger.log('AgentProcessor initialized');
@@ -182,13 +185,34 @@ export class AgentProcessor {
         `Sending ${messages.length} messages to LLM for processing`,
       );
 
-      const model = task.model as unknown as BytebotAgentModel;
-      let agentResponse: BytebotAgentResponse;
+      // Handle both string and object model formats
+      let modelString: string;
+      let provider: string;
 
-      const service = this.services[model.provider];
+      if (typeof task.model === 'string') {
+        modelString = task.model;
+        // Determine provider from model string - all new models go through proxy
+        provider = 'proxy';
+        if (modelString.startsWith('gemini/')) {
+          provider = 'google';
+        }
+      } else if (typeof task.model === 'object' && task.model !== null) {
+        // Handle legacy object format
+        const modelObj = task.model as any;
+        modelString = modelObj.name || task.model;
+        provider = modelObj.provider || 'proxy';
+      } else {
+        modelString = 'claude-3.5-sonnet'; // fallback
+        provider = 'proxy';
+      }
+
+      this.logger.debug(`Using model: ${modelString} with provider: ${provider}`);
+
+      let agentResponse: BytebotAgentResponse;
+      const service = this.services[provider];
       if (!service) {
         this.logger.warn(
-          `No service found for model provider: ${model.provider}`,
+          `No service found for model provider: ${provider}`,
         );
         await this.tasksService.update(taskId, {
           status: TaskStatus.FAILED,
@@ -201,7 +225,7 @@ export class AgentProcessor {
       agentResponse = await service.generateMessage(
         AGENT_SYSTEM_PROMPT,
         messages,
-        model.name,
+        modelString,
         true,
         this.abortController.signal,
       );
@@ -230,8 +254,8 @@ export class AgentProcessor {
         taskId,
       });
 
-      // Calculate if we need to summarize based on token usage
-      const contextWindow = model.contextWindow || 200000; // Default to 200k if not specified
+      // Calculate if we need to summarize based on token usage  
+      const contextWindow = 200000; // Default to 200k context window
       const contextThreshold = contextWindow * 0.75;
       const shouldSummarize =
         agentResponse.tokenUsage.totalTokens >= contextThreshold;
@@ -258,7 +282,7 @@ export class AgentProcessor {
                 ],
               },
             ],
-            model.name,
+            modelString,
             false,
             this.abortController.signal,
           );

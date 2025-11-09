@@ -72,7 +72,7 @@
       "anchors": [
         {
           "anchor": "GitHub",
-          "href": "https://github.com/bytebot-ai/bytebot",
+          "href": "https://github.com/fxinfo24/ByteBot-Pro",
           "icon": "github"
         },
         {
@@ -107,12 +107,12 @@
     "primary": {
       "type": "button",
       "label": "Get Started",
-      "href": "https://github.com/bytebot-ai/bytebot"
+      "href": "https://github.com/fxinfo24/ByteBot-Pro"
     }
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/bytebot-ai/bytebot",
+      "github": "https://github.com/fxinfo24/ByteBot-Pro",
       "twitter": "https://twitter.com/bytebotai",
       "discord": "https://discord.gg/zcb5wA2t4u"
     }

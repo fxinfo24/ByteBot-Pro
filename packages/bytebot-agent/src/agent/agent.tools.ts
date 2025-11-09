@@ -1,3 +1,5 @@
+import { atlassianTools } from '../atlassian/atlassian.tools';
+
 /**
  * Common schema definitions for reuse
  */
@@ -402,4 +404,5 @@ export const agentTools = [
   _setTaskStatusTool,
   _createTaskTool,
   _readFileTool,
+  ...atlassianTools,
 ];

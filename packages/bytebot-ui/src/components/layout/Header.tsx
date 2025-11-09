@@ -9,11 +9,13 @@ import {
   TaskDaily01Icon,
   Home01Icon,
   ComputerIcon,
+  Sun02Icon,
+  Moon02Icon,
 } from "@hugeicons/core-free-icons";
 import { usePathname } from "next/navigation";
 
 export function Header() {
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
@@ -88,7 +90,24 @@ export function Header() {
           </Link>
         </div>
       </div>
-      <div className="flex items-center gap-3"></div>
+      <div className="flex items-center gap-3">
+        {/* Dark mode toggle */}
+        <button
+          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+          className="flex items-center justify-center h-8 w-8 rounded-md border border-bytebot-bronze-light-7 bg-bytebot-bronze-light-1 text-bytebot-bronze-dark-9 hover:bg-bytebot-bronze-light-3 transition-colors"
+          aria-label="Toggle theme"
+        >
+          {mounted ? (
+            resolvedTheme === "dark" ? (
+              <HugeiconsIcon icon={Sun02Icon} className="h-4 w-4" />
+            ) : (
+              <HugeiconsIcon icon={Moon02Icon} className="h-4 w-4" />
+            )
+          ) : (
+            <div className="h-4 w-4" />
+          )}
+        </button>
+      </div>
     </header>
   );
 }

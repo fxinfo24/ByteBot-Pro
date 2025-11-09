@@ -91,6 +91,14 @@ spec:
               name: {{ include "bytebot-agent.fullname" . }}-secrets
               key: gemini-api-key
         {{- end }}
+        {{- /* OpenRouter API Key */ -}}
+        {{- if .Values.env.OPENROUTER_API_KEY }}
+        - name: OPENROUTER_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "bytebot-agent.fullname" . }}-secrets
+              key: openrouter-api-key
+        {{- end }}
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
       {{- with .Values.nodeSelector }}

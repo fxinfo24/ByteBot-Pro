@@ -18,6 +18,7 @@ import {
   ThinkingContentBlock,
 } from '@bytebot/shared';
 import { Message, Role } from '@prisma/client';
+import { PROXY_MODELS } from './proxy.constants';
 import { proxyTools } from './proxy.tools';
 import {
   BytebotAgentService,
@@ -44,6 +45,10 @@ export class ProxyService implements BytebotAgentService {
       apiKey: 'dummy-key-for-proxy',
       baseURL: proxyUrl,
     });
+  }
+
+  getAvailableModels() {
+    return PROXY_MODELS;
   }
 
   /**

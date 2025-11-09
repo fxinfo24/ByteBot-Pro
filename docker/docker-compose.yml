@@ -25,7 +25,7 @@ services:
     container_name: bytebot-postgres
     restart: unless-stopped
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
@@ -51,8 +51,14 @@ services:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - BYTEBOT_LLM_PROXY_URL=${BYTEBOT_LLM_PROXY_URL}
+      - ATLASSIAN_BASE_URL=${ATLASSIAN_BASE_URL}
+      - ATLASSIAN_EMAIL=${ATLASSIAN_EMAIL}
+      - ATLASSIAN_API_TOKEN=${ATLASSIAN_API_TOKEN}
     depends_on:
       - postgres
+      - bytebot-llm-proxy
     networks:
       - bytebot-network
 
@@ -77,6 +83,27 @@ services:
       - bytebot-agent
     networks:
       - bytebot-network
+
+  bytebot-llm-proxy:
+    image: ghcr.io/berriai/litellm:main-latest
+    container_name: bytebot-llm-proxy
+    volumes:
+      - ../packages/bytebot-llm-proxy/litellm-config.yaml:/app/config.yaml
+    ports:
+      - "4000:4000"
+    command: ["--config", "/app/config.yaml", "--port", "4000", "--num_workers", "8"]
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    networks:
+      - bytebot-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4000/model/info"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 networks:
   bytebot-network:
