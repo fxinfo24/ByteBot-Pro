@@ -5,12 +5,12 @@
 ### **🙏 Original Project:**
 This project is an **enhanced version** of the excellent [ByteBot](https://github.com/bytebot-ai/bytebot) created by the [ByteBot AI team](https://github.com/bytebot-ai).
 
-**Original ByteBot**: https://github.com/bytebot-ai/bytebot  
-**Original Creators**: ByteBot AI Team  
+**Original ByteBot**: https://github.com/bytebot-ai/bytebot
+**Original Creators**: ByteBot AI Team
 **License**: [View Original License](https://github.com/bytebot-ai/bytebot/blob/main/LICENSE)
 
-**Enhanced Version**: https://github.com/fxinfo24/ByteBot-Pro  
-**ByteBot-Pro Creator**: fxinfo24  
+**Enhanced Version**: https://github.com/fxinfo24/ByteBot-Pro
+**ByteBot-Pro Creator**: fxinfo24
 **Enhancement Focus**: 100% operational AI automation with production optimizations
 
 ### **🔥 Our Enhancements - "ByteBot-Pro":**
@@ -32,7 +32,7 @@ We've built upon the solid foundation of ByteBot to create **ByteBot-Pro** - a *
 - **📊 Task Management**: Visual workflow management and real-time monitoring
 - **🔄 Multi-Provider**: Cost-effective routing via OpenRouter + direct providers
 
-## 🚀 Quick Start - Simple Deployment (n8n-style!)
+## 🚀 Quick Start - Simple Deployment
 
 The fastest way to get Bytebot running is with our simplified deployment:
 
@@ -43,12 +43,12 @@ cd ByteBot-Pro
 ./scripts/bytebot.sh start
 ```
 
-**That's it!** Just like deploying n8n! Once running, visit [http://localhost:9992](http://localhost:9992) to access the web interface.
+**That's it!** Once running, visit [http://localhost:9992](http://localhost:9992) to access the web interface.
 
 ### 🎛️ Simple Commands
 ```bash
 ./scripts/bytebot.sh start    # Start all services (like 'docker compose up -d')
-./scripts/bytebot.sh stop     # Stop all services  
+./scripts/bytebot.sh stop     # Stop all services
 ./scripts/bytebot.sh restart  # Restart everything
 ./scripts/bytebot.sh status   # Check health & show all URLs
 ./scripts/bytebot.sh logs     # View all service logs
@@ -88,7 +88,7 @@ nano .env  # or vim .env
 
 #### **📚 Documentation Overhaul:**
 1. **✅ Production-Grade Docs**: Complete rewrite with accurate status reporting
-2. **✅ User Experience**: Clear deployment paths and realistic expectations  
+2. **✅ User Experience**: Clear deployment paths and realistic expectations
 3. **✅ Professional Standards**: Enterprise-quality documentation standards
 4. **✅ Troubleshooting**: Comprehensive guides and error resolution
 5. **✅ Clean Structure**: Consolidated from 15+ files to 6 essential documents
@@ -127,7 +127,7 @@ For **12 AI models via OpenRouter (7 premium + 3 FREE) + Gemini**, set these in 
 # OpenRouter API Key (10 models: 7 premium + 3 FREE)
 OPENROUTER_API_KEY=sk-or-v1-your-openrouter-key-here
 
-# Google Gemini API Key (2 models: Gemini Pro, Gemini Flash)  
+# Google Gemini API Key (2 models: Gemini Pro, Gemini Flash)
 GEMINI_API_KEY=AIza-your-google-api-key-here
 
 # Optional: Atlassian Integration
@@ -141,7 +141,7 @@ ATLASSIAN_API_TOKEN=your-atlassian-token-here
 ### 🆓 **NEW: 3 Completely FREE Models Available!**
 **Start using AI automation at ZERO cost:**
 - **z-ai/glm-4.5-air:free** 🆓 - Advanced text generation (131k context)
-- **deepseek/deepseek-chat-v3.1:free** 🆓 - Conversational AI (163k context) 
+- **deepseek/deepseek-chat-v3.1:free** 🆓 - Conversational AI (163k context)
 - **qwen/qwen3-coder:free** 🆓 - Code generation specialist (262k context)
 
 *Perfect for testing, learning, and cost-effective AI automation!*
@@ -173,7 +173,7 @@ ATLASSIAN_API_TOKEN=your-atlassian-token-here
 Take a screenshot and describe what you see in one sentence.
 ```
 
-### **Atlassian Automation** 
+### **Atlassian Automation**
 ```
 Create a Jira ticket titled "Review Q1 metrics" with description from the current desktop screenshot.
 ```
@@ -187,9 +187,9 @@ Take a screenshot, analyze the current workflow, then create a Confluence page d
 
 ```
 your-bytebot-dir/
-├── bytebot.sh              ← Main deployment script (like n8n's docker compose)
+├── bytebot.sh              ← Main deployment script
 ├── docker-compose.yml      ← Service definitions
-├── .env                    ← Your configuration (like n8n's .env)
+├── .env                    ← Your configuration
 ├── packages/               ← Source code
 ├── QUICK_START.md          ← 5-minute deployment guide
 └── docs/                   ← Documentation
@@ -206,7 +206,7 @@ cp docker/.env .env
 # Stop old setup
 ./bytebot.sh stop
 
-# Start new simplified setup  
+# Start new simplified setup
 cd .. && ./bytebot.sh start
 ```
 
@@ -239,7 +239,7 @@ cd .. && ./bytebot.sh start
 
 ## 🏆 Why Choose Bytebot?
 
-- **🚀 Easy Deployment**: One command, just like n8n
+- **🚀 Easy Deployment**: One command Deployment
 - **💰 Cost Effective**: OpenRouter unified billing + competitive pricing
 - **🤖 AI-Native**: Built for AI automation from ground up
 - **🔧 Professional**: Enterprise-ready with health monitoring

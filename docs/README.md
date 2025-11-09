@@ -2,6 +2,19 @@
 
 This directory contains all user-facing documentation for ByteBot-Pro.
 
+## 🌐 **Quick Navigation Path**
+
+```
+📖 Start Here → 🚀 Local Setup → 🌐 Global Access → 🔗 Enterprise → 🎉 Success!
+```
+
+**Recommended Journey:**
+1. **[../README.md](../README.md)** - Overview & features
+2. **[QUICK_START.md](QUICK_START.md)** - 5-minute local deployment  
+3. **[CLOUDFLARE_TUNNEL.md](CLOUDFLARE_TUNNEL.md)** - Optional global access
+4. **[ATLASSIAN_INTEGRATION.md](ATLASSIAN_INTEGRATION.md)** - Optional enterprise features
+5. **[DEPLOYMENT.md](DEPLOYMENT.md)** - Advanced configuration if needed
+
 ## 📁 Documentation Files
 
 - **[QUICK_START.md](QUICK_START.md)** - 5-minute deployment guide with 12 AI models (3 FREE)
