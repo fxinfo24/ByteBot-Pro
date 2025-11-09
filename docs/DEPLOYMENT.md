@@ -107,7 +107,7 @@ docker-compose up -d
 ### With LiteLLM Proxy
 ```bash
 # Advanced routing and caching
-./bytebot.sh start
+./scripts/bytebot.sh start
 ```
 
 ## ☸️ Kubernetes Deployment

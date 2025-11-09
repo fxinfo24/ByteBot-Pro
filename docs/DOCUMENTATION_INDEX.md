@@ -7,7 +7,7 @@
 ## 🚀 Getting Started
 
 ### **For New Users:**
-1. **[README.md](README.md)** - Project overview and feature summary
+1. **[README.md](../README.md)** - Project overview and feature summary
 2. **[QUICK_START.md](QUICK_START.md)** - 5-minute deployment guide with 12 AI models (3 FREE)
 
 ### **For Advanced Users:**
@@ -81,8 +81,8 @@ README.md → QUICK_START.md → [Optional: ATLASSIAN_INTEGRATION.md] → Succes
 - **Regularly Updated** - Reflects actual platform capabilities
 
 ### **User Experience Improved:**
-- **Single deployment command** - `./bytebot.sh start`
-- **Built-in health monitoring** - `./bytebot.sh status`  
+- **Single deployment command** - `./scripts/bytebot.sh start`
+- **Built-in health monitoring** - `./scripts/bytebot.sh status`  
 - **Clear feature progression** - Basic setup → Model configuration → Advanced workflows
 - **No confusion** about platform capabilities
 - **Accurate expectations** about what's included

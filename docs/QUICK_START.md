@@ -40,14 +40,14 @@ ATLASSIAN_API_TOKEN=your-atlassian-token-here
 
 ### **Step 3: Deploy with One Command**
 ```bash
-./bytebot.sh start
+./scripts/bytebot.sh start
 ```
 
 **That's it!** Just like deploying n8n with `docker compose up -d`.
 
 ### **Step 4: Check Status & Get URLs**
 ```bash
-./bytebot.sh status
+./scripts/bytebot.sh status
 ```
 
 You'll see:
@@ -111,42 +111,42 @@ Open [http://localhost:9992](http://localhost:9992) and you'll see:
 ## 🎛️ Simple Management Commands
 
 ```bash
-./bytebot.sh start    # Start all services
-./bytebot.sh stop     # Stop all services
-./bytebot.sh restart  # Restart everything
-./bytebot.sh status   # Check health & show URLs
-./bytebot.sh logs     # View all logs
-./bytebot.sh update   # Pull latest & rebuild
+./scripts/bytebot.sh start    # Start all services
+./scripts/bytebot.sh stop     # Stop all services
+./scripts/bytebot.sh restart  # Restart everything
+./scripts/bytebot.sh status   # Check health & show URLs
+./scripts/bytebot.sh logs     # View all logs
+./scripts/bytebot.sh update   # Pull latest & rebuild
 ```
 
 ## 🆚 vs Traditional Deployment
 
 | Traditional | Simplified Bytebot |
 |-------------|-------------------|
-| `cd docker && docker-compose -f legacy.yml up -d` | `./bytebot.sh start` |
-| Manual health checking | `./bytebot.sh status` |
+| `cd docker && docker-compose -f legacy.yml up -d` | `./scripts/bytebot.sh start` |
+| Manual health checking | `./scripts/bytebot.sh status` |
 | Complex file navigation | Simple root-level script |
-| Manual log checking | `./bytebot.sh logs` |
+| Manual log checking | `./scripts/bytebot.sh logs` |
 
 ## 🩺 Troubleshooting
 
 ### **If Models Don't Work:**
 ```bash
-./bytebot.sh logs bytebot-llm-proxy  # Check proxy logs
-./bytebot.sh restart                 # Restart everything
+./scripts/bytebot.sh logs bytebot-llm-proxy  # Check proxy logs
+./scripts/bytebot.sh restart                 # Restart everything
 ```
 
 ### **If UI Doesn't Load:**
 ```bash
-./bytebot.sh logs bytebot-ui        # Check UI logs
+./scripts/bytebot.sh logs bytebot-ui        # Check UI logs
 curl http://localhost:9992          # Test direct access
 ```
 
 ### **General Issues:**
 ```bash
-./bytebot.sh status                 # Full system health check
-./bytebot.sh logs                   # All service logs
-./bytebot.sh update                 # Nuclear option: rebuild everything
+./scripts/bytebot.sh status                 # Full system health check
+./scripts/bytebot.sh logs                   # All service logs
+./scripts/bytebot.sh update                 # Nuclear option: rebuild everything
 ```
 
 ## 🎉 Success Indicators

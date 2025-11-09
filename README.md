@@ -36,22 +36,22 @@ We've built upon the solid foundation of ByteBot to create **ByteBot-Pro** - a *
 The fastest way to get Bytebot running is with our simplified deployment:
 
 ```bash
-git clone https://github.com/bytebot-ai/bytebot.git
-cd bytebot
+git clone https://github.com/fxinfo24/ByteBot-Pro.git
+cd ByteBot-Pro
 # Edit .env with your API keys (see Configuration below)
-./bytebot.sh start
+./scripts/bytebot.sh start
 ```
 
 **That's it!** Just like deploying n8n! Once running, visit [http://localhost:9992](http://localhost:9992) to access the web interface.
 
 ### 🎛️ Simple Commands
 ```bash
-./bytebot.sh start    # Start all services (like 'docker compose up -d')
-./bytebot.sh stop     # Stop all services  
-./bytebot.sh restart  # Restart everything
-./bytebot.sh status   # Check health & show all URLs
-./bytebot.sh logs     # View all service logs
-./bytebot.sh update   # Pull latest changes & rebuild
+./scripts/bytebot.sh start    # Start all services (like 'docker compose up -d')
+./scripts/bytebot.sh stop     # Stop all services  
+./scripts/bytebot.sh restart  # Restart everything
+./scripts/bytebot.sh status   # Check health & show all URLs
+./scripts/bytebot.sh logs     # View all service logs
+./scripts/bytebot.sh update   # Pull latest changes & rebuild
 ```
 
 ### 📊 What You Get
@@ -114,7 +114,7 @@ cp .env.example .env
 # Edit .env with your API keys (see below)
 
 # Deploy with one command
-./bytebot.sh start
+./scripts/bytebot.sh start
 ```
 
 ### **🔑 API Configuration**
@@ -246,11 +246,11 @@ cd .. && ./bytebot.sh start
 
 ## 📚 Documentation
 
-- **[Quick Start Guide](QUICK_START.md)** - 5-minute deployment with 12 AI models (3 FREE)
-- **[Deployment Guide](DEPLOYMENT.md)** - Advanced deployment options
-- **[Atlassian Integration](ATLASSIAN_INTEGRATION.md)** - Jira & Confluence setup
-- **[Documentation Index](DOCUMENTATION_INDEX.md)** - Complete guide navigation
-- **[Project Attribution](PROJECT_ATTRIBUTION.md)** - Credits to original ByteBot team & our enhancements
+- **[Quick Start Guide](docs/QUICK_START.md)** - 5-minute deployment with 12 AI models (3 FREE)
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Advanced deployment options
+- **[Atlassian Integration](docs/ATLASSIAN_INTEGRATION.md)** - Jira & Confluence setup
+- **[Documentation Index](docs/DOCUMENTATION_INDEX.md)** - Complete guide navigation
+- **[Project Attribution](docs/PROJECT_ATTRIBUTION.md)** - Credits to original ByteBot team & our enhancements
 
 ---
 
@@ -267,7 +267,7 @@ cd .. && ./bytebot.sh start
 - **Open Source**: Transparent enhancements with full attribution
 
 ### **✅ Superior Experience**
-- **One-Command Deploy**: `./bytebot.sh start` - simple as n8n
+- **One-Command Deploy**: `./scripts/bytebot.sh start` - simple as n8n
 - **Accurate Documentation**: No false promises, realistic expectations
 - **Professional Support**: Enterprise-grade documentation and troubleshooting
 
@@ -283,5 +283,5 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-**🎉 Ready to automate? Run `./bytebot.sh start` and visit http://localhost:9992!** 🚀# ByteBot-Pro
+**🎉 Ready to automate? Run `./scripts/bytebot.sh start` and visit http://localhost:9992!** 🚀
 # ByteBot-Pro
